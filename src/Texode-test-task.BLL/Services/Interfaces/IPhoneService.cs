@@ -13,7 +13,7 @@ namespace Texode_test_task.BLL.Services.Interfaces
 
         PhoneDto GetById(int id);
 
-        Task CreatePhone(PhoneDto phone);
+        Task AddPhone(PhoneDto phone);
 
         Task UpdatePhone(PhoneDto phone);
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Texode_test_task.DAL.Cards;
 using Texode_test_task.DAL.Models;
 using Texode_test_task.DAL.Repositories.Interfaces;
 
@@ -10,7 +11,9 @@ namespace Texode_test_task.DAL.Repositories
 {
     public class PhoneRepository : IPhoneRepository
     {
-        public Task CreatePhone(Phone phone)
+        private List<Phone> _phones = new List<Phone>();
+
+        public Task AddPhone(Phone phone)
         {
             throw new NotImplementedException();
         }
@@ -22,7 +25,9 @@ namespace Texode_test_task.DAL.Repositories
 
         public IEnumerable<Phone> GetAll()
         {
-            throw new NotImplementedException();
+            ReadData readData = new ReadData();
+            readData.Run();
+            return _phones;
         }
 
         public Phone GetById(int id)

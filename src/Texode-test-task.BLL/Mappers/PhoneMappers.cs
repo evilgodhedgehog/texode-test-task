@@ -25,7 +25,7 @@ namespace Texode_test_task.BLL.Mappers
             }
         }
 
-        public static Phone MapDtoTo(this PhoneDto phone)
+       /* public static Phone MapDtoTo(this PhoneDto phone)
         {
             return new Phone
             {
@@ -35,6 +35,6 @@ namespace Texode_test_task.BLL.Mappers
                 ImageLink = phone.ImageLink,
                 Price = phone.Price,
             };
-        }
+        }*/
     }
 }

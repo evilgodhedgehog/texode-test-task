@@ -1,0 +1,58 @@
+[
+  {
+    "id": 0,
+    "manufacturer": "LG",
+    "model": "Z5",
+    "imageLink": "http://placehold.it/32x32",
+    "price": "$1652.34"
+  },
+  {
+    "id": 1,
+    "manufacturer": "Apple",
+    "model": "13 pro",
+    "imageLink": "http://placehold.it/32x32",
+    "price": "$1672.15"
+  },
+  {
+    "id": 2,
+    "manufacturer": "Samsung",
+    "model": "13 pro",
+    "imageLink": "http://placehold.it/32x32",
+    "price": "$1026.30"
+  },
+  {
+    "id": 3,
+    "manufacturer": "LG",
+    "model": "A50",
+    "imageLink": "http://placehold.it/32x32",
+    "price": "$1377.40"
+  },
+  {
+    "id": 4,
+    "manufacturer": "Sony",
+    "model": "A50",
+    "imageLink": "http://placehold.it/32x32",
+    "price": "$1897.71"
+  },
+  {
+    "id": 5,
+    "manufacturer": "Samsung",
+    "model": "A50",
+    "imageLink": "http://placehold.it/32x32",
+    "price": "$1490.40"
+  },
+  {
+    "id": 6,
+    "manufacturer": "Samsung",
+    "model": "Z5",
+    "imageLink": "http://placehold.it/32x32",
+    "price": "$1510.30"
+  },
+  {
+    "id": 7,
+    "manufacturer": "Apple",
+    "model": "S7",
+    "imageLink": "http://placehold.it/32x32",
+    "price": "391.87"
+  }
+]

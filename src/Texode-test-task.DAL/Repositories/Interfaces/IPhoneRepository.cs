@@ -13,7 +13,7 @@ namespace Texode_test_task.DAL.Repositories.Interfaces
 
         Phone GetById(int id);
 
-        Task CreatePhone(Phone phone);
+        Task AddPhone(Phone phone);
 
         void UpdatePhone(Phone phone);
 
