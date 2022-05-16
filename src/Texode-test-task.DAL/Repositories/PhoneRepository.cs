@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Texode_test_task.DAL.Cards;
+using Texode_test_task.DAL.Data;
 using Texode_test_task.DAL.Models;
 using Texode_test_task.DAL.Repositories.Interfaces;
 

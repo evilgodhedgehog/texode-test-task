@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Texode_test_task.BLL.Mappers;
+﻿using Texode_test_task.BLL.Mappers;
 using Texode_test_task.BLL.Models;
 using Texode_test_task.BLL.Services.Interfaces;
-using Texode_test_task.DAL.Cards;
 using Texode_test_task.DAL.Repositories.Interfaces;
 
 namespace Texode_test_task.BLL.Services

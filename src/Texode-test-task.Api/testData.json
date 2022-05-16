@@ -15,9 +15,9 @@
   },
   {
     "Id": 2,
-    "Manufacturer": "test",
-    "Model": "test",
-    "ImageLink": "test",
+    "Manufacturer": "Apple",
+    "Model": "A50",
+    "ImageLink": "http://placehold.it/32x32",
     "Price": 2000.0
   },
   {
@@ -49,17 +49,10 @@
     "Price": 1510.3
   },
   {
-    "Id": 10,
-    "Manufacturer": "test",
-    "Model": "test",
-    "ImageLink": "test",
-    "Price": 2000.0
-  },
-  {
-    "Id": 10,
-    "Manufacturer": "testMan",
-    "Model": "testMod",
-    "ImageLink": "testImage",
+    "Id": 7,
+    "Manufacturer": "Sony",
+    "Model": "Z5",
+    "ImageLink": "http://placehold.it/32x32",
     "Price": 2000.0
   }
 ]

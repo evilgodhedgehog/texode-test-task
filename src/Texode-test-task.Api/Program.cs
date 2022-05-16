@@ -1,6 +1,5 @@
 using Texode_test_task.BLL.Services;
 using Texode_test_task.BLL.Services.Interfaces;
-using Texode_test_task.DAL.Cards;
 using Texode_test_task.DAL.Repositories;
 using Texode_test_task.DAL.Repositories.Interfaces;
 
