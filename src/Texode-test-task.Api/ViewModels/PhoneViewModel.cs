@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.Json;
+﻿using Texode_test_task.BLL.Models;
 
-namespace Texode_test_task.DAL.Models
+namespace Texode_test_task.Api.ViewModels
 {
-public class Phone
+    public class PhoneViewModel
     {
         public int Id { get; set; }
 
@@ -18,5 +13,10 @@ public class Phone
         public string ImageLink { get; set; }
 
         public decimal Price { get; set; }
+
+        internal PhoneDto MapToView()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

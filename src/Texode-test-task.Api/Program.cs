@@ -13,7 +13,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddTransient<IReadData, ReadData>();
 builder.Services.AddTransient<IPhoneRepository, PhoneRepository>();
 builder.Services.AddTransient<IPhoneService, PhoneService>();
 

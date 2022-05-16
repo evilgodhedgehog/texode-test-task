@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Texode_test_task.Api.ViewModels;
 using Texode_test_task.BLL.Models;
-using Texode_test_task.DAL.Models;
 
-namespace Texode_test_task.BLL.Mappers
+namespace Texode_test_task.Api.Mappers
 {
-    public static class PhoneMappers
+    public static class PhoneDtoMappers
     {
-        public static IEnumerable<PhoneDto> MapToDto(this IEnumerable<Phone> phones)
+        public static IEnumerable<PhoneViewModel> MapToView(this IEnumerable<PhoneDto> phones)
         {
             foreach (var phone in phones)
             {
-                yield return new PhoneDto
+                yield return new PhoneViewModel
                 {
                     Id = phone.Id,
                     Manufacturer = phone.Manufacturer,
@@ -25,9 +20,9 @@ namespace Texode_test_task.BLL.Mappers
             }
         }
 
-        public static PhoneDto MapToDto(this Phone phone)
+        public static PhoneViewModel MapToView(this PhoneDto phone)
         {
-            return new PhoneDto
+            return new PhoneViewModel
             {
                 Id = phone.Id,
                 Manufacturer = phone.Manufacturer,
@@ -37,9 +32,9 @@ namespace Texode_test_task.BLL.Mappers
             };
         }
 
-        public static Phone MapDtoTo(this PhoneDto phone)
+        public static PhoneDto MapViewTo(this PhoneViewModel phone)
         {
-            return new Phone
+            return new PhoneDto
             {
                 Id = phone.Id,
                 Manufacturer = phone.Manufacturer,

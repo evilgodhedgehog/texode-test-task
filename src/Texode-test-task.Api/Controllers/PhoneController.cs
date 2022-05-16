@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Texode_test_task.BLL.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using Texode_test_task.Api.Mappers;
+using Texode_test_task.Api.ViewModels;
 using Texode_test_task.BLL.Services.Interfaces;
 
 namespace Texode_test_task.Api.Controllers
@@ -17,27 +17,51 @@ namespace Texode_test_task.Api.Controllers
         }
 
         [HttpPost]
-        public async Task AddPhone(PhoneDto phone)
+        public void AddPhone(int id, string manufacturer, string model, string imageLink, decimal price)
         {
-            Console.WriteLine("Suc");
-            await _phoneService.AddPhone(phone);
+            PhoneViewModel phone = new PhoneViewModel
+            {
+                Id = id,
+                Manufacturer = manufacturer,
+                Model = model,
+                ImageLink = imageLink,
+                Price = price
+            };
+
+            _phoneService.AddPhone(phone.MapViewTo());
         }
 
         [HttpGet]
-        public IEnumerable<PhoneDto> GetAll()
+        public IEnumerable<PhoneViewModel> GetAll()
         {
-            return _phoneService.GetAll();
+            return _phoneService.GetAll().MapToView();
         }
 
         [HttpGet("{id}")]
-        public PhoneDto GetById(int id)
+        public PhoneViewModel GetById(int id)
         {
-            return _phoneService.GetById(id);
+            return _phoneService.GetById(id).MapToView();
         }
 
-        public void DeletePost(int id)
+        [HttpDelete]
+        public void DeletePhone(int id)
         {
             _phoneService.DeletePhone(id);
+        }
+
+        [HttpPut]
+        public void UdpatePhone(int id, string manufacturer, string model, string imageLink, decimal price)
+        {
+            PhoneViewModel phone = new PhoneViewModel
+            {
+                Id = id,
+                Manufacturer = manufacturer,
+                Model = model,
+                ImageLink = imageLink,
+                Price = price
+            };
+
+            _phoneService.UpdatePhone(phone.MapViewTo());
         }
     }
 }

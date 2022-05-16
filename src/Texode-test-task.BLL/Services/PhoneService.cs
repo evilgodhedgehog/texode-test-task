@@ -20,14 +20,16 @@ namespace Texode_test_task.BLL.Services
             _phoneRepository = phoneRepository ?? throw new ArgumentNullException(nameof(phoneRepository));
         }
 
-        public Task AddPhone(PhoneDto phone)
+        public void AddPhone(PhoneDto phone)
         {
-            throw new NotImplementedException();
+            _phoneRepository.AddPhone(phone.MapDtoTo());
+            _phoneRepository.SaveChanges();
         }
 
         public void DeletePhone(int id)
         {
-            throw new NotImplementedException();
+            _phoneRepository.DeletePhone(id);
+            _phoneRepository.SaveChanges();
         }
 
         public IEnumerable<PhoneDto> GetAll()
@@ -37,12 +39,13 @@ namespace Texode_test_task.BLL.Services
 
         public PhoneDto GetById(int id)
         {
-            throw new NotImplementedException();
+            return _phoneRepository.GetById(id).MapToDto();
         }
 
-        public Task UpdatePhone(PhoneDto phone)
+        public void UpdatePhone(PhoneDto phone)
         {
-            throw new NotImplementedException();
+            _phoneRepository.UpdatePhone(phone.MapDtoTo());
+            _phoneRepository.SaveChanges();
         }
     }
 }

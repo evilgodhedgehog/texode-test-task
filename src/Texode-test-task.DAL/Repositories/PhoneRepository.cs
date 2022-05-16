@@ -13,31 +13,68 @@ namespace Texode_test_task.DAL.Repositories
     {
         private List<Phone> _phones = new List<Phone>();
 
-        public Task AddPhone(Phone phone)
+        public PhoneRepository()
         {
-            throw new NotImplementedException();
+            _phones = DataStream.ReadData().ToList();
+        }
+
+        public void AddPhone(Phone phone)
+        {
+            phone = phone ?? throw new ArgumentNullException(nameof(phone));
+
+            if(phone != null)
+            {
+                _phones.Add(phone);
+            }
         }
 
         public void DeletePhone(int id)
         {
-            throw new NotImplementedException();
+            var isEmpty = _phones.Find(phone => phone.Id == id);
+
+            if(isEmpty != null)
+            {
+                _phones.Remove(isEmpty);
+            }
         }
 
         public IEnumerable<Phone> GetAll()
         {
-            ReadData readData = new ReadData();
-            readData.Run();
             return _phones;
         }
 
         public Phone GetById(int id)
         {
-            throw new NotImplementedException();
+            var isEmpty = _phones.Find(phone => phone.Id == id);
+
+            if (isEmpty != null)
+            {
+                return isEmpty;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public void UpdatePhone(Phone phone)
         {
-            throw new NotImplementedException();
+            phone = phone ?? throw new ArgumentNullException(nameof(phone));
+
+            Phone phoneModify = _phones.Find(phoneModify => phoneModify.Id == phone.Id);
+
+            if(phoneModify != null)
+            {
+                phoneModify.Manufacturer = phone.Manufacturer;
+                phoneModify.Model = phone.Model;
+                phoneModify.ImageLink = phone.ImageLink;
+                phoneModify.Price = phone.Price;
+            }
+        }
+
+        public void SaveChanges()
+        {
+            DataStream.WriteData(_phones);
         }
     }
 }

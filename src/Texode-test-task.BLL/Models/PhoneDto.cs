@@ -17,6 +17,5 @@ namespace Texode_test_task.BLL.Models
         public string ImageLink { get; set; }
 
         public decimal Price { get; set; }
-
     }
 }
