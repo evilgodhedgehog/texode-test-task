@@ -4,15 +4,15 @@ namespace Texode_test_task.DAL.Repositories.Interfaces
 {
     public interface IPhoneRepository
     {
-        IEnumerable<Phone> GetAll();
+        IEnumerable<Phone> Get();
 
-        Phone GetById(int id);
+        Phone Get(int id);
 
-        void AddPhone(Phone phone);
+        void Add(Phone phone);
 
-        void UpdatePhone(Phone phone);
+        void Update(Phone phone);
 
-        void DeletePhone(int id);
+        void Delete(int id);
 
         void SaveChanges();
     }

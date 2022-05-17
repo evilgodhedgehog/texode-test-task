@@ -23,4 +23,8 @@
     <ProjectReference Include="..\Texode-test-task.BLL\Texode-test-task.BLL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
+
 </Project>

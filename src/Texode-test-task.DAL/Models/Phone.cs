@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Texode_test_task.DAL.Models
 {
-public class Phone
+    public class Phone
     {
         public int Id { get; set; }
 

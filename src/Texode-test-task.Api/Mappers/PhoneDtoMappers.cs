@@ -32,7 +32,7 @@ namespace Texode_test_task.Api.Mappers
             };
         }
 
-        public static PhoneDto MapViewTo(this PhoneViewModel phone)
+        public static PhoneDto MapToDto(this PhoneViewModel phone)
         {
             return new PhoneDto
             {

@@ -13,10 +13,5 @@ namespace Texode_test_task.Api.ViewModels
         public string ImageLink { get; set; }
 
         public decimal Price { get; set; }
-
-        internal PhoneDto MapToView()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

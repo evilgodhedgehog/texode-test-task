@@ -32,7 +32,7 @@ namespace Texode_test_task.BLL.Mappers
             };
         }
 
-        public static Phone MapDtoTo(this PhoneDto phone)
+        public static Phone MapToDomain(this PhoneDto phone)
         {
             return new Phone
             {

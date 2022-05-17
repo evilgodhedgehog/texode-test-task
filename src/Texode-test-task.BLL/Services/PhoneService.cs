@@ -14,31 +14,31 @@ namespace Texode_test_task.BLL.Services
             _phoneRepository = phoneRepository ?? throw new ArgumentNullException(nameof(phoneRepository));
         }
 
-        public void AddPhone(PhoneDto phone)
+        public void Add(PhoneDto phone)
         {
-            _phoneRepository.AddPhone(phone.MapDtoTo());
+            _phoneRepository.Add(phone.MapToDomain());
             _phoneRepository.SaveChanges();
         }
 
-        public void DeletePhone(int id)
+        public void Delete(int id)
         {
-            _phoneRepository.DeletePhone(id);
+            _phoneRepository.Delete(id);
             _phoneRepository.SaveChanges();
         }
 
-        public IEnumerable<PhoneDto> GetAll()
+        public IEnumerable<PhoneDto> Get()
         {
-            return _phoneRepository.GetAll().MapToDto();
+            return _phoneRepository.Get().MapToDto();
         }
 
-        public PhoneDto GetById(int id)
+        public PhoneDto Get(int id)
         {
-            return _phoneRepository.GetById(id).MapToDto();
+            return _phoneRepository.Get(id).MapToDto();
         }
 
-        public void UpdatePhone(PhoneDto phone)
+        public void Update(PhoneDto phone)
         {
-            _phoneRepository.UpdatePhone(phone.MapDtoTo());
+            _phoneRepository.Update(phone.MapToDomain());
             _phoneRepository.SaveChanges();
         }
     }

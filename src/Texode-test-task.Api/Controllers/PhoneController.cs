@@ -17,51 +17,59 @@ namespace Texode_test_task.Api.Controllers
         }
 
         [HttpPost]
-        public void AddPhone(int id, string manufacturer, string model, string imageLink, decimal price)
+        public IActionResult Add(PhoneViewModel phone)
         {
-            PhoneViewModel phone = new PhoneViewModel
+            if (phone == null || phone.Id <= 0)
             {
-                Id = id,
-                Manufacturer = manufacturer,
-                Model = model,
-                ImageLink = imageLink,
-                Price = price
-            };
+                return BadRequest();
+            }
 
-            _phoneService.AddPhone(phone.MapViewTo());
+            _phoneService.Add(phone.MapToDto());
+
+            return Created("~phone", phone);
         }
 
         [HttpGet]
-        public IEnumerable<PhoneViewModel> GetAll()
+        public IActionResult Get()
         {
-            return _phoneService.GetAll().MapToView();
+            return Ok(_phoneService.Get().MapToView());
         }
 
         [HttpGet("{id}")]
-        public PhoneViewModel GetById(int id)
+        public IActionResult Get(int id)
         {
-            return _phoneService.GetById(id).MapToView();
+            if (id <= 0)
+            {
+                return BadRequest();
+            }
+
+            return Ok(_phoneService.Get(id).MapToView());
         }
 
         [HttpDelete]
-        public void DeletePhone(int id)
+        public IActionResult Delete(int id)
         {
-            _phoneService.DeletePhone(id);
+            if (id <= 0)
+            {
+                return BadRequest();
+            }
+
+            _phoneService.Delete(id);
+
+            return NoContent();
         }
 
         [HttpPut]
-        public void UdpatePhone(int id, string manufacturer, string model, string imageLink, decimal price)
+        public IActionResult Udpate(PhoneViewModel phone)
         {
-            PhoneViewModel phone = new PhoneViewModel
+            if (phone == null || phone.Id <= 0)
             {
-                Id = id,
-                Manufacturer = manufacturer,
-                Model = model,
-                ImageLink = imageLink,
-                Price = price
-            };
+                return BadRequest();
+            }
 
-            _phoneService.UpdatePhone(phone.MapViewTo());
+            _phoneService.Update(phone.MapToDto());
+
+            return Ok();
         }
     }
 }

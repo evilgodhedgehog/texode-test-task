@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Texode_test_task.UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="800">
     <Grid>
-
+        <WrapPanel>
+            <Button Width="100" Content="Add"></Button>
+            <Button Width="100" Content="Remove"></Button>
+            <Button Width="100" Content="Edit"></Button>
+        </WrapPanel>
+        <Grid>
+            
+        </Grid>
     </Grid>
 </Window>

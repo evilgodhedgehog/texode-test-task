@@ -4,14 +4,14 @@ namespace Texode_test_task.BLL.Services.Interfaces
 {
     public interface IPhoneService
     {
-        IEnumerable<PhoneDto> GetAll();
+        IEnumerable<PhoneDto> Get();
 
-        PhoneDto GetById(int id);
+        PhoneDto Get(int id);
 
-        void AddPhone(PhoneDto phone);
+        void Add(PhoneDto phone);
 
-        void UpdatePhone(PhoneDto phone);
+        void Update(PhoneDto phone);
 
-        void DeletePhone(int id);
+        void Delete(int id);
     }
 }

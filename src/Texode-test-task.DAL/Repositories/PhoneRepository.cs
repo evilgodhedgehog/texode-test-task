@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Texode_test_task.DAL.Data;
+﻿using Texode_test_task.DAL.Data;
 using Texode_test_task.DAL.Models;
 using Texode_test_task.DAL.Repositories.Interfaces;
 
@@ -12,69 +7,68 @@ namespace Texode_test_task.DAL.Repositories
     public class PhoneRepository : IPhoneRepository
     {
         private List<Phone> _phones = new List<Phone>();
+        private string url = "testData.json";
 
-        public PhoneRepository()
+        private void ReadFromFile()
         {
-            _phones = DataStream.ReadData().ToList();
+            _phones = FileContext<Phone>.ReadData(url).ToList();
         }
 
-        public void AddPhone(Phone phone)
+        public void Add(Phone phone)
         {
-            phone = phone ?? throw new ArgumentNullException(nameof(phone));
+            ReadFromFile();
+
+            _phones.Add(phone);
+        }
+
+        public void Delete(int id)
+        {
+            ReadFromFile();
+
+            var phone = _phones.Find(phone => phone.Id == id);
 
             if(phone != null)
             {
-                _phones.Add(phone);
+                _phones.Remove(phone);
             }
         }
 
-        public void DeletePhone(int id)
+        public IEnumerable<Phone> Get()
         {
-            var isEmpty = _phones.Find(phone => phone.Id == id);
+            ReadFromFile();
 
-            if(isEmpty != null)
-            {
-                _phones.Remove(isEmpty);
-            }
-        }
-
-        public IEnumerable<Phone> GetAll()
-        {
             return _phones;
         }
 
-        public Phone GetById(int id)
+        public Phone Get(int id)
         {
-            var isEmpty = _phones.Find(phone => phone.Id == id);
+            ReadFromFile();
 
-            if (isEmpty != null)
-            {
-                return isEmpty;
-            }
-            else
-            {
-                return null;
-            }
+            var phone = _phones.Find(phone => phone.Id == id);
+
+            phone = phone ?? throw new ArgumentNullException(nameof(phone));
+            
+            return phone;
         }
 
-        public void UpdatePhone(Phone phone)
+        public void Update(Phone phone)
         {
-            phone = phone ?? throw new ArgumentNullException(nameof(phone));
+            ReadFromFile();
 
-            Phone phoneModify = _phones.Find(phoneModify => phoneModify.Id == phone.Id);
+            var modifiedPhone = _phones.Find(modifiedPhone => modifiedPhone.Id == phone.Id);
 
-            if(phoneModify != null)
+            if(modifiedPhone != null)
             {
-                phoneModify.Manufacturer = phone.Manufacturer;
-                phoneModify.Model = phone.Model;
-                phoneModify.ImageLink = phone.ImageLink;
-                phoneModify.Price = phone.Price;
+                modifiedPhone.Manufacturer = phone.Manufacturer;
+                modifiedPhone.Model = phone.Model;
+                modifiedPhone.ImageLink = phone.ImageLink;
+                modifiedPhone.Price = phone.Price;
             }
         }
 
         public void SaveChanges()
         {
-            DataStream.WriteData(_phones);
+            FileContext<Phone>.WriteData(_phones, url);
         }
     }
 }
