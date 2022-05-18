@@ -5,15 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Texode_test_task.UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
+        Title="MainWindow" MaxHeight="800" MinHeight="700" Width="800">
+    <Window.Resources>
+        <DataTemplate x:Key="listTemplate">
+            <StackPanel Margin="5">
+                <Image Source="{Binding Path=ImageLink}" Width="130" Height="200"/>
+                <TextBlock FontSize="20" Text="{Binding Path=Manufacturer}" HorizontalAlignment="Center" FontWeight="Bold"/>
+                <TextBlock FontSize="16" Text="{Binding Path=Model}" HorizontalAlignment="Center" />
+                <TextBlock FontSize="16" Text="{Binding Path=Price}" HorizontalAlignment="Center" />
+            </StackPanel>
+        </DataTemplate>
+        <ItemsPanelTemplate x:Key="listPanelTemplate">
+            <WrapPanel />
+        </ItemsPanelTemplate>
+    </Window.Resources>
     <Grid>
-        <WrapPanel>
-            <Button Width="100" Content="Add"></Button>
-            <Button Width="100" Content="Remove"></Button>
-            <Button Width="100" Content="Edit"></Button>
-        </WrapPanel>
-        <Grid>
-            
-        </Grid>
+        <Border MinWidth="600" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="700" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0">
+                    
+                </DropShadowEffect>
+            </Border.Effect>
+            <StackPanel>
+                <WrapPanel>
+                    <Button x:Name="AddButton" Width="100" Content="Add" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Click="AddButtonClick"/>
+                    <Button x:Name="EditButton" Width="100" Content="Edit" HorizontalAlignment="Left" Margin="5,0,5,0" VerticalAlignment="Top" Click="EditButtonClick"/>
+                    <Button x:Name="DeleteButton" Width="100" Content="Delete" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Click="DeleteButtonClick"/>
+                </WrapPanel>
+                <ListBox x:Name="MainList" ItemTemplate="{StaticResource listTemplate}" ItemsPanel="{StaticResource listPanelTemplate}" ScrollViewer.HorizontalScrollBarVisibility="Disabled"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

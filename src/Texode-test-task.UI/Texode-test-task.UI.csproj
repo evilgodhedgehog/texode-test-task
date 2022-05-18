@@ -9,7 +9,26 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="NewFolder\" />
+    <None Remove="Images\iphone.jpeg" />
+    <None Remove="Images\lg.jpeg" />
+    <None Remove="Images\samsung.jpeg" />
+    <None Remove="Images\sony.jpeg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignColors" Version="2.0.6" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Texode-test-task.Api\Texode-test-task.Api.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\iphone.jpeg" />
+    <Resource Include="Images\lg.jpeg" />
+    <Resource Include="Images\samsung.jpeg" />
+    <Resource Include="Images\sony.jpeg" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
-using Texode_test_task.DAL.Models;
 
-namespace Texode_test_task.DAL.Data
+namespace Texode_test_task.DAL.Context
 {
     public abstract class FileContext<T>
     {
