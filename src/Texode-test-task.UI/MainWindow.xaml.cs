@@ -75,9 +75,13 @@ namespace Texode_test_task.UI
         {
             await Get(_url);
             var index = MainList.SelectedIndex;
-            await Delete(_phones[index].Id);
-            await Get(_url);
-            MainList.ItemsSource = _phones;
+
+            if(index >= 0)
+            {
+                await Delete(_phones[index].Id);
+                await Get(_url);
+                MainList.ItemsSource = _phones;
+            }
         }
 
         private async Task Delete(int id)
