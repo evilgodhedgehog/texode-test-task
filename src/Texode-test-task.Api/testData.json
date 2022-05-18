@@ -1,0 +1,51 @@
+[
+  {
+    "Id": 1,
+    "Manufacturer": "Apple",
+    "Model": "13 pro",
+    "ImageLink": "/Images/iphone.jpeg",
+    "Price": 1672.15
+  },
+  {
+    "Id": 2,
+    "Manufacturer": "Apple",
+    "Model": "A50",
+    "ImageLink": "/Images/iphone.jpeg",
+    "Price": 2000.0
+  },
+  {
+    "Id": 3,
+    "Manufacturer": "LG",
+    "Model": "A50",
+    "ImageLink": "/Images/lg.jpeg",
+    "Price": 1377.4
+  },
+  {
+    "Id": 4,
+    "Manufacturer": "Sony",
+    "Model": "A50",
+    "ImageLink": "/Images/sony.jpeg",
+    "Price": 1897.71
+  },
+  {
+    "Id": 5,
+    "Manufacturer": "Samsung",
+    "Model": "A50",
+    "ImageLink": "/Images/samsung.jpeg",
+    "Price": 1490.4
+  },
+  {
+    "Id": 6,
+    "Manufacturer": "Samsung",
+    "Model": "Z5",
+    "ImageLink": "/Images/samsung.jpeg",
+    "Price": 1510.3
+  },
+  {
+    "Id": 7,
+    "Manufacturer": "Sony",
+    "Model": "Z5",
+    "ImageLink": "/Images/sony.jpeg",
+    "Price": 2000.0
+  }
+]
